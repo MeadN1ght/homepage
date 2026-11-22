@@ -12,7 +12,13 @@
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; color: var(--text); background: var(--bg);
+    margin: 0; min-height: 100vh; color: var(--text);
+    /* Trame de points fixe (reprise de la version MSI-PC, sans suivi de souris ni masque) :
+       le 1er calque, couleur du fond, la fait s'effacer autour d'une ellipse en haut au centre */
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 20%, transparent, 45%, var(--bg)),
+      radial-gradient(rgba(255,255,255,.09) 1px, transparent 1.6px) 0 0 / 22px 22px,
+      var(--bg);
     font: 15px/1.4 "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
     overflow-x: hidden;
   }
